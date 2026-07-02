@@ -1,7 +1,7 @@
 # pbo-km-narkotika-TOL
 Anggota Kelompok:
 - Olivia Saqina Wardany (202510370110057)
-- Nafisa khalila Rahman (2025103701100750
+- Nafisa khalila Rahman (202510370110075)
 - Dwi Susilaningtyas (202510370110076)
 # KMS Putusan Pengadilan Narkotika
 Knowledge Management System berbasis Java (MVC) untuk mengelola data
