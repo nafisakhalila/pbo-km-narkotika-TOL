@@ -1,0 +1,63 @@
+package util;
+
+import java.util.Scanner;
+
+//helper buat validasi input, biar ga gampang crash kalo user salah ketik
+//dipake di hampir semua menu progam ini
+
+public class InputHandler {
+
+    //minta input angka bulat, ulang terus kalo salah format
+    public static int validasilnt(String prompt, Scanner sc) {
+        while (true) {
+            System.out.print(prompt);
+            try {
+                return Integer.parselnt(sc.nextLine().trim());
+            } catch (NumberFormatException e) {
+                //user suka iseng masukin huruf, jadi harus di-handle
+                System.out.println("Input harus berupa angka bulat. Coba lagi.");
+            }
+        }
+    }
+
+    //sama kayak di atas tapi buat angka desimal (harga, nilai, dll)
+    public static double validasiDouble(String prompt, Scanner sc) {
+        while (true) {
+            System.out.print(prompt);
+            try {
+                return Double.parseDouble(sc.nextLine().trim());
+            }catch (NumberFormatException e) {
+                System.out.println("Input harus berupa angka. Coba lagi.");
+            }
+        }
+    }
+
+    //validasi teks biasa, cuma mastiin ga kosong
+    public static String validasiString(String prompt, Scanner sc) {
+        while (true) {
+            System.out.print(prompt);
+            String input=sc.nextLine().trim();
+
+            if (input.isEmpty()) {
+                System.out.println("Input tidak boleh kosong. Coba lagi.");
+                continue;
+            }
+            return input;
+        }
+    }
+
+    //buat validasi pilihan menu (misal 1-5), manggil validasilnt di dalemnya
+    public static int validasiPilihan(String prompt, int min, int max, Scanner sc) {
+
+        int pilihan;
+        while (true) {
+            pilihan = validasilnt(prompt, sc);
+            if (pilihan < min || pilihan > max) {
+                System.out.println("Pilihan harus antara" + min + "-" + max +". Coba lagi.");
+                continue;
+            }
+            break;
+        }
+        return pilihan;
+    }
+}
