@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10" xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="view.JavaFXController">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <Label text="Knowledge Management System - Putusan Narkotika"
+           style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+    <GridPane hgap="10" vgap="10">
+        <Label text="Nomor Perkara:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtNomorPerkara" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="Nama Terdakwa:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtNamaTerdakwa" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Label text="Jenis Narkotika:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtJenisNarkotika" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+        <Label text="Vonis (bulan):" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtVonis" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+    </GridPane>
+
+    <HBox spacing="10">
+        <Button text="Tambah Putusan" onAction="#handleTambahPutusan"/>
+        <Button text="Hapus Putusan" onAction="#handleHapusPutusan"/>
+        <Button text="Refresh" onAction="#handleRefresh"/>
+    </HBox>
+
+    <TableView fx:id="tabelPutusan" prefHeight="300">
+        <columns>
+            <TableColumn fx:id="colNomor" text="Nomor Perkara" prefWidth="150"/>
+            <TableColumn fx:id="colNama" text="Nama Terdakwa" prefWidth="150"/>
+            <TableColumn fx:id="colJenis" text="Jenis Narkotika" prefWidth="120"/>
+            <TableColumn fx:id="colVonis" text="Vonis (bulan)" prefWidth="100"/>
+        </columns>
+    </TableView>
+
+    <Label fx:id="lblStatus" text=""/>
+</VBox>
