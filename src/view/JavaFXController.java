@@ -21,6 +21,14 @@ public class JavaFXController {
     @FXML private TextField txtNamaTerdakwa;
     @FXML private TextField txtJenisNarkotika;
     @FXML private TextField txtVonis;
+    @FXML private TextField txtPengadilan;
+    @FXML private TextField txtTanggal;
+    @FXML private TextField txtUmur;
+    @FXML private TextField txtBerat;
+    @FXML private TextField txtPasal;
+    @FXML private TextField txtPeran;
+    @FXML private TextField txtDenda;
+    @FXML private TextField txtHakim;
     @FXML private Label lblStatus;
 
     @FXML private TableView<Putusan> tabelPutusan;
