@@ -61,9 +61,17 @@
     <TableView fx:id="tabelPutusan" prefHeight="300">
         <columns>
             <TableColumn fx:id="colNomor" text="Nomor Perkara" prefWidth="150"/>
+            <TableColumn fx:id="colPengadilan" text="Pengadilan" prefWidth="120"/>
+            <TableColumn fx:id="colTanggal" text="Tanggal Putusan" prefWidth="120"/>
             <TableColumn fx:id="colNama" text="Nama Terdakwa" prefWidth="150"/>
-            <TableColumn fx:id="colJenis" text="Jenis Narkotika" prefWidth="120"/>
+            <TableColumn fx:id="colUmur" text="Umur Terdakwa" prefWidth="100"/>
+            <TableColumn fx:id="colJenis" text="Jenis Narkotika" prefWidth="180"/>
+            <TableColumn fx:id="colBerat" text="Berat Barang Bukti" prefWidth="130"/>
+            <TableColumn fx:id="colPasal" text="Pasal Dilanggar" prefWidth="200"/>
+            <TableColumn fx:id="colPeran" text="Peran Terdakwa" prefWidth="200"/>
             <TableColumn fx:id="colVonis" text="Vonis (bulan)" prefWidth="100"/>
+            <TableColumn fx:id="colDenda" text="Vonis Denda" prefWidth="130"/>
+            <TableColumn fx:id="colHakim" text="Nama Hakim" prefWidth="300"/>
         </columns>
     </TableView>
 

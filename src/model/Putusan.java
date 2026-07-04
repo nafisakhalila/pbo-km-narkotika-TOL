@@ -47,6 +47,8 @@ public class Putusan extends EntitasHukum implements Rekapitulasi {
         jumlahDibuat++;
     }
 
+
+
     // setter buat field yang ada di parent class (EntitasHukum), tinggal diteruskan aja
     public void setNomorPerkara(String nomorPerkara) { super.setNomorPerkara(nomorPerkara); }
     public void setPengadilan(String pengadilan) { super.setPengadilan(pengadilan); }

@@ -33,18 +33,33 @@ public class JavaFXController {
 
     @FXML private TableView<Putusan> tabelPutusan;
     @FXML private TableColumn<Putusan, String> colNomor;
+    @FXML private TableColumn<Putusan, String> colPengadilan;
+    @FXML private TableColumn<Putusan, String> colTanggal;
     @FXML private TableColumn<Putusan, String> colNama;
+    @FXML private TableColumn<Putusan, Integer> colUmur;
     @FXML private TableColumn<Putusan, String> colJenis;
+    @FXML private TableColumn<Putusan, Double> colBerat;
+    @FXML private TableColumn<Putusan, String> colPasal;
+    @FXML private TableColumn<Putusan, String> colPeran;
     @FXML private TableColumn<Putusan, Integer> colVonis;
-
+    @FXML private TableColumn<Putusan, Double> colDenda;
+    @FXML private TableColumn<Putusan, String> colHakim;
     // method ini otomatis kepanggil pas FXML selesai di-load
     @FXML
     public void initialize() {
         // mapping kolom tabel ke atribut di model Putusan
         colNomor.setCellValueFactory(new PropertyValueFactory<>("nomorPerkara"));
+        colPengadilan.setCellValueFactory(new PropertyValueFactory<>("pengadilan"));
+        colTanggal.setCellValueFactory(new PropertyValueFactory<>("tanggalPutusan"));
         colNama.setCellValueFactory(new PropertyValueFactory<>("namaTerdakwa"));
+        colUmur.setCellValueFactory(new PropertyValueFactory<>("umurTerdakwa"));
         colJenis.setCellValueFactory(new PropertyValueFactory<>("jenisNarkotika"));
+        colBerat.setCellValueFactory(new PropertyValueFactory<>("beratBarangBukti"));
+        colPasal.setCellValueFactory(new PropertyValueFactory<>("pasalDilanggar"));
+        colPeran.setCellValueFactory(new PropertyValueFactory<>("peranTerdakwa"));
         colVonis.setCellValueFactory(new PropertyValueFactory<>("vonisHukuman"));
+        colDenda.setCellValueFactory(new PropertyValueFactory<>("vonisDenda"));
+        colHakim.setCellValueFactory(new PropertyValueFactory<>("namaHakim"));
 
         refreshTabel();
     }
