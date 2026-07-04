@@ -1,16 +1,12 @@
 package controller;
-
 import model.KnowledgeRepository;
 import model.Putusan;
 import model.StatistikPutusan;
 import java.util.ArrayList;
-
 /** jembatan antara View sama Model
 semua request dari UI lewat sini dulu sebelum sampe ke repository*/
 public class KnowledgeController {
-
     private KnowledgeRepository repository;
-
     public KnowledgeController() {
         repository = new KnowledgeRepository();
     }
@@ -49,7 +45,6 @@ public class KnowledgeController {
             }
             return hasil;
         }
-
         return repository.cariByNama(keyword);
     }
 
@@ -58,7 +53,6 @@ public class KnowledgeController {
         if (kriteria.equalsIgnoreCase("jenis")) {
             return repository.filterByJenis(nilai);
         }
-
         return repository.filterByPengadilan(nilai);
     }
 
@@ -66,12 +60,10 @@ public class KnowledgeController {
     public boolean hapusPutusan(String nomor) {
         return repository.hapus(nomor);
     }
-
     /** ngitung statistik dari semua data yang ada*/
     public StatistikPutusan getStatistik() {
         return new StatistikPutusan(repository.getDaftarSemua());
     }
-
     /** buat nampilin semua data di tabel/list view */
     public ArrayList<Putusan> getSemuaPutusan() {
         return repository.getDaftarSemua();

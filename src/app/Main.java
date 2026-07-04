@@ -1,9 +1,7 @@
 package app;
-
 import controller.KnowledgeController;
 import view.ConsoleView;
 import java.util.Scanner;
-
 /**
  * Entry point aplikasi versi console.
  * Alurnya: tampilin menu -> proses pilihan user -> ulang lagi
@@ -19,7 +17,6 @@ public class Main {
         KnowledgeController controller = new KnowledgeController();
         ConsoleView view = new ConsoleView();
         Scanner sc = new Scanner(System.in);
-
         int pilihan;
         do {
             pilihan = view.tampilkanMenu(sc);
@@ -34,12 +31,10 @@ public class Main {
                             : "Gagal menambahkan data. Periksa kembali input Anda.");
                     break;
                 }
-
                 case 2:
                     /** tampilin semua data yang ada */
                     view.tampilkanDaftarPutusan(controller.getSemuaPutusan());
                     break;
-
                 case 3: {
                    /** pencarian, bisa by nomor perkara atau nama terdakwa*/
                     System.out.print("Cari berdasarkan (nomor/nama): ");
@@ -49,7 +44,6 @@ public class Main {
                     view.tampilkanDaftarPutusan(controller.cariPutusan(keyword, mode));
                     break;
                 }
-
                 case 4: {
                     /** filter data by jenis narkotika atau nama pengadilan */
                     System.out.print("Filter berdasarkan (jenis/pengadilan): ");
@@ -59,7 +53,6 @@ public class Main {
                     view.tampilkanDaftarPutusan(controller.filterPutusan(kriteria, nilai));
                     break;
                 }
-
                 case 5: {
                     /** hapus data berdasarkan nomor perkara */
                     System.out.print("Nomor perkara yang dihapus: ");
@@ -68,22 +61,18 @@ public class Main {
                     view.tampilkanPesan(hapus ? "Data berhasil dihapus." : "Data tidak ditemukan.");
                     break;
                 }
-
                 case 6:
                     /** tampilin laporan statistik dari semua data */
                     view.tampilkanStatistik(controller.getStatistik());
                     break;
-
                 case 0:
                     /** keluar dari program */
                     view.tampilkanPesan("Terima kasih telah menggunakan aplikasi KMS Putusan Narkotika.");
                     break;
-
                 default:
                     view.tampilkanPesan("Pilihan tidak valid.");
             }
         } while (pilihan != 0);
-
         sc.close();
     }
 }
