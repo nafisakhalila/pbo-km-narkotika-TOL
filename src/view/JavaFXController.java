@@ -2,6 +2,7 @@ package view;
 
 import controller.KnowledgeController;
 import model.Putusan;
+import model.StatistikPutusan;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -9,6 +10,10 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import java.util.ArrayList;
+import javafx.scene.control.Alert;
+import javafx.geometry.Insets;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
 
 /** Controller buat sisi tampilan (JavaFX)
 Tugas file ini cuma nyambungin UI ke KnowledgeController
@@ -156,6 +161,79 @@ Tugas file ini cuma nyambungin UI ke KnowledgeController
     @FXML
     private void handleRefresh() {
         refreshTabel();
+    }
+    /**
+     * Handler untuk tombol "Statistik".
+     * Menampilkan hasil kalkulasi StatistikPutusan dalam bentuk dialog popup
+     * dengan tampilan yang lebih rapi dan terstruktur.
+     */
+    @FXML
+    private void handleTampilkanStatistik() {
+        StatistikPutusan stat = controller.getStatistik();
+
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Statistik Putusan");
+        alert.setHeaderText(null); // header custom kita buat sendiri di content
+
+        // ===== Header =====
+        Label headerTitle = new Label("📊 Laporan Statistik Putusan Narkotika");
+        headerTitle.setStyle("-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #1e3a8a;");
+
+        Separator separator = new Separator();
+
+        // ===== Ringkasan utama (grid biar rapi sejajar) =====
+        GridPane grid = new GridPane();
+        grid.setHgap(12);
+        grid.setVgap(6);
+        grid.setPadding(new Insets(10, 0, 10, 0));
+
+        grid.add(buatLabelKey("Total Putusan"), 0, 0);
+        grid.add(buatLabelValue(String.valueOf(stat.getTotalPutusan())), 1, 0);
+
+        grid.add(buatLabelKey("Rata-rata Vonis"), 0, 1);
+        grid.add(buatLabelValue(String.format("%.2f bulan", stat.getRataRataVonis())), 1, 1);
+
+        grid.add(buatLabelKey("Rata-rata Denda"), 0, 2);
+        grid.add(buatLabelValue(String.format("Rp%,.0f", stat.getRataRataDenda())), 1, 2);
+
+        grid.add(buatLabelKey("Jenis Narkotika Terbanyak"), 0, 3);
+        grid.add(buatLabelValue(stat.getJenisNarkotikaTerbanyak()), 1, 3);
+
+        // ===== Distribusi peran terdakwa =====
+        Label distribusiTitle = new Label("Distribusi Peran Terdakwa");
+        distribusiTitle.setStyle("-fx-font-weight: bold; -fx-text-fill: #33475b; -fx-padding: 8 0 4 0;");
+
+        VBox distribusiBox = new VBox(4);
+        for (String d : stat.getDistribusiPeran()) {
+            Label item = new Label("•  " + d);
+            item.setStyle("-fx-text-fill: #475569;");
+            distribusiBox.getChildren().add(item);
+        }
+
+        VBox content = new VBox(4, headerTitle, separator, grid, distribusiTitle, distribusiBox);
+        content.setPadding(new Insets(15));
+        content.setStyle("-fx-background-color: white;");
+
+        alert.getDialogPane().setContent(content);
+        alert.getDialogPane().setPrefWidth(480);
+
+        alert.getDialogPane().getStylesheets().add(
+                getClass().getResource("style.css").toExternalForm()
+        );
+
+        alert.showAndWait();
+    }
+
+    private Label buatLabelKey(String text) {
+        Label l = new Label(text + " :");
+        l.setStyle("-fx-text-fill: #64748b; -fx-font-size: 13px;");
+        return l;
+    }
+
+    private Label buatLabelValue(String text) {
+        Label l = new Label(text);
+        l.setStyle("-fx-text-fill: #1e293b; -fx-font-weight: 600; -fx-font-size: 13px;");
+        return l;
     }
 
     // load ulang isi tabel dari controller

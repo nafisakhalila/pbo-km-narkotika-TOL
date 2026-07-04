@@ -4,15 +4,17 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox spacing="10" xmlns="http://javafx.com/javafx"
-      xmlns:fx="http://javafx.com/fxml"
-      fx:controller="view.JavaFXController">
-    <padding>
-        <Insets top="20" right="20" bottom="20" left="20"/>
-    </padding>
 
-    <Label text="Knowledge Management System - Putusan Narkotika"
-           style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+    <VBox spacing="12" xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:controller="view.JavaFXController"
+          stylesheets="@style.css">
+        <padding>
+            <Insets top="20" right="20" bottom="20" left="20"/>
+        </padding>
+
+        <Label text="Knowledge Management System - Putusan Narkotika"
+               style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #1e3a8a;"/>
 
     <GridPane hgap="10" vgap="10">
         <Label text="Nomor Perkara:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
@@ -58,6 +60,7 @@
         <Button text="Tambah Putusan" onAction="#handleTambahPutusan"/>
         <Button text="Hapus Putusan" onAction="#handleHapusPutusan"/>
         <Button text="Refresh" onAction="#handleRefresh"/>
+        <Button fx:id="btnStatistik" text="Statistik" onAction="#handleTampilkanStatistik"/>
     </HBox>
 
     <TableView fx:id="tabelPutusan" prefHeight="300">

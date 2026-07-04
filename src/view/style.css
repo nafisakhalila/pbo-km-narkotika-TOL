@@ -1,0 +1,99 @@
+.root {
+    -fx-background-color: linear-gradient(to bottom right, #f4f6f8, #eef2f7);
+    -fx-font-family: "Segoe UI", "Inter", sans-serif;
+}
+
+.label {
+    -fx-text-fill: #33475b;
+    -fx-font-size: 13px;
+}
+
+/* ===== BUTTON ===== */
+.button {
+    -fx-background-color: #3b82f6;
+    -fx-text-fill: white;
+    -fx-font-weight: 600;
+    -fx-font-size: 13px;
+    -fx-background-radius: 8;
+    -fx-padding: 8 18 8 18;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(59,130,246,0.35), 8, 0, 0, 2);
+    -fx-transition: -fx-background-color 0.2s ease-in-out;
+}
+.button:hover {
+    -fx-background-color: #2563eb;
+    -fx-effect: dropshadow(gaussian, rgba(37,99,235,0.45), 10, 0, 0, 3);
+    -fx-translate-y: -1;
+}
+.button:pressed {
+    -fx-background-color: #1d4ed8;
+    -fx-translate-y: 0;
+    -fx-effect: dropshadow(gaussian, rgba(29,78,216,0.3), 4, 0, 0, 1);
+}
+
+#btnHapus {
+    -fx-background-color: #ef4444;
+    -fx-effect: dropshadow(gaussian, rgba(239,68,68,0.35), 8, 0, 0, 2);
+}
+#btnHapus:hover {
+    -fx-background-color: #dc2626;
+    -fx-effect: dropshadow(gaussian, rgba(220,38,38,0.45), 10, 0, 0, 3);
+}
+
+#btnStatistik {
+    -fx-background-color: #10b981;
+    -fx-effect: dropshadow(gaussian, rgba(16,185,129,0.35), 8, 0, 0, 2);
+}
+#btnStatistik:hover {
+    -fx-background-color: #059669;
+    -fx-effect: dropshadow(gaussian, rgba(5,150,105,0.45), 10, 0, 0, 3);
+}
+
+/* ===== TEXT FIELD ===== */
+.text-field {
+    -fx-background-color: white;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-border-color: #d5dce4;
+    -fx-border-width: 1;
+    -fx-padding: 7 10 7 10;
+    -fx-font-size: 13px;
+    -fx-effect: innershadow(gaussian, rgba(0,0,0,0.03), 2, 0, 0, 1);
+}
+.text-field:focused {
+    -fx-border-color: #3b82f6;
+    -fx-effect: dropshadow(gaussian, rgba(59,130,246,0.25), 6, 0, 0, 0);
+}
+
+/* ===== TABLE VIEW ===== */
+.table-view {
+    -fx-background-color: white;
+    -fx-border-color: #e2e8f0;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-effect: dropshadow(gaussian, rgba(30,41,59,0.06), 10, 0, 0, 3);
+}
+.table-view .column-header-background {
+    -fx-background-color: linear-gradient(to bottom, #1e3a8a, #17306e);
+    -fx-background-radius: 10 10 0 0;
+}
+.table-view .column-header .label {
+    -fx-text-fill: white;
+    -fx-font-weight: 600;
+    -fx-font-size: 12.5px;
+    -fx-alignment: CENTER-LEFT;
+}
+.table-row-cell {
+    -fx-background-color: white;
+    -fx-border-color: transparent transparent #eef1f5 transparent;
+}
+.table-row-cell:odd {
+    -fx-background-color: #f8fafc;
+}
+.table-row-cell:hover {
+    -fx-background-color: #eef4ff;
+}
+.table-row-cell:selected {
+    -fx-background-color: #dbeafe;
+    -fx-text-fill: #1e3a8a;
+}
