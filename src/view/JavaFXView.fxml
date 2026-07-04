@@ -53,6 +53,8 @@
     </GridPane>
 
     <HBox spacing="10">
+        <TextField fx:id="txtCari" promptText="Ketik nomor perkara / nama terdakwa"/>
+        <Button text="Cari" onAction="#handleCariPutusan"/>
         <Button text="Tambah Putusan" onAction="#handleTambahPutusan"/>
         <Button text="Hapus Putusan" onAction="#handleHapusPutusan"/>
         <Button text="Refresh" onAction="#handleRefresh"/>

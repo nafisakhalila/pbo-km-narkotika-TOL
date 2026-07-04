@@ -8,6 +8,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import java.util.ArrayList;
 
 /** Controller buat sisi tampilan (JavaFX)
 Tugas file ini cuma nyambungin UI ke KnowledgeController
@@ -31,6 +32,7 @@ Tugas file ini cuma nyambungin UI ke KnowledgeController
     @FXML private TextField txtPeran;
     @FXML private TextField txtDenda;
     @FXML private TextField txtHakim;
+    @FXML private TextField txtCari;
     @FXML private Label lblStatus;
 
     @FXML private TableView<Putusan> tabelPutusan;
@@ -74,26 +76,19 @@ Tugas file ini cuma nyambungin UI ke KnowledgeController
     @FXML
     private void handleTambahPutusan() {
         try {
-            // catatan: sebagian data masih di-hardcode dulu karena form belum lengkap
-            // (rencananya field2 ini bakal ditambah kalau ada waktu revisi)
-            String nomor = txtNomorPerkara.getText();
-            String nama = txtNamaTerdakwa.getText();
-            String jenis = txtJenisNarkotika.getText();
-            String vonis = txtVonis.getText();
-
             String[] data = {
-                    nomor,
-                    "PN Surabaya",
-                    "01/01/2026",
-                    nama,
-                    "30",
-                    jenis,
-                    "1.0",
-                    "Pasal 114 UU No. 35/2009",
-                    "Kurir",
-                    vonis,
-                    "0",
-                    "Hakim Contoh"
+                    txtNomorPerkara.getText(),
+                    txtPengadilan.getText(),
+                    txtTanggal.getText(),
+                    txtNamaTerdakwa.getText(),
+                    txtUmur.getText(),
+                    txtJenisNarkotika.getText(),
+                    txtBerat.getText(),
+                    txtPasal.getText(),
+                    txtPeran.getText(),
+                    txtVonis.getText(),
+                    txtDenda.getText(),
+                    txtHakim.getText()
             };
 
             boolean sukses = controller.tambahPutusan(data);
@@ -107,9 +102,39 @@ Tugas file ini cuma nyambungin UI ke KnowledgeController
             refreshTabel();
 
         } catch (Exception e) {
-            // ditangkap generic dulu, belum sempat bikin exception khusus
             lblStatus.setText("Ups, ada kesalahan. Coba periksa kembali input Anda.");
         }
+    }
+    /**
+     * Handler untuk tombol "Cari".
+     * Mencari putusan berdasarkan nomor perkara atau nama terdakwa
+     * (dicoba dua-duanya, hasil yang ditemukan langsung ditampilkan di tabel).
+     */
+    @FXML
+    private void handleCariPutusan() {
+        String keyword = txtCari.getText();
+
+        if (keyword == null || keyword.trim().isEmpty()) {
+            lblStatus.setText("Masukkan kata kunci pencarian terlebih dahulu.");
+            return;
+        }
+
+        // coba cari berdasarkan nomor perkara dulu
+        ArrayList<Putusan> hasil = controller.cariPutusan(keyword, "nomor");
+
+        // kalau gak ketemu, coba cari berdasarkan nama
+        if (hasil.isEmpty()) {
+            hasil = controller.cariPutusan(keyword, "nama");
+        }
+
+        if (hasil.isEmpty()) {
+            lblStatus.setText("Data tidak ditemukan.");
+        } else {
+            lblStatus.setText("Ditemukan " + hasil.size() + " data.");
+        }
+
+        ObservableList<Putusan> data = FXCollections.observableArrayList(hasil);
+        tabelPutusan.setItems(data);
     }
 /**
  * Handler untuk tombol "Hapus Putusan".
