@@ -70,7 +70,6 @@ Tugas file ini cuma nyambungin UI ke KnowledgeController
         colDenda.setCellValueFactory(new PropertyValueFactory<>("vonisDenda"));
         colHakim.setCellValueFactory(new PropertyValueFactory<>("namaHakim"));
 
-        refreshTabel();
     }
 
     /**

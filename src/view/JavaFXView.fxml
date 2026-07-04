@@ -61,6 +61,7 @@
         <Button text="Hapus Putusan" onAction="#handleHapusPutusan"/>
         <Button text="Refresh" onAction="#handleRefresh"/>
         <Button fx:id="btnStatistik" text="Statistik" onAction="#handleTampilkanStatistik"/>
+        <Button text="Tampilkan Data" onAction="#handleRefresh"/>
     </HBox>
 
     <TableView fx:id="tabelPutusan" VBox.vgrow="ALWAYS" prefHeight="300">
