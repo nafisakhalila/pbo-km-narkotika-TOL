@@ -1,15 +1,14 @@
 package view;
-
 import model.Putusan;
 import model.StatistikPutusan;
 import java.util.ArrayList;
 import java.util.Scanner;
+
 /**
  * Ini bagian tampilan buat versi console (command line).
  * Tugasnya cuma nampilin teks ke layar sama nangkep input dari user
  * di sini fokusnya cuma "tampil" doang.
  */
-
 public class ConsoleView {
 
     public int tampilkanMenu(Scanner sc) {
@@ -28,7 +27,6 @@ public class ConsoleView {
             return -1;
         }
     }
-
     /**
      * Nampilin daftar semua putusan versi ringkas (kayak tabel sederhana)
      */
@@ -57,7 +55,6 @@ public class ConsoleView {
     public void tampilkanStatistik(StatistikPutusan stat) {
         stat.tampilkanLaporan();
     }
-
     public void tampilkanPesan(String pesan) {
         System.out.println(pesan);
     }

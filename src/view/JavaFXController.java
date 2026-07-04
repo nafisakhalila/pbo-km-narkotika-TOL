@@ -1,5 +1,4 @@
 package view;
-
 import controller.KnowledgeController;
 import model.Putusan;
 import model.StatistikPutusan;
@@ -14,7 +13,6 @@ import javafx.scene.control.Alert;
 import javafx.geometry.Insets;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
-
 /** Controller buat sisi tampilan (JavaFX)
 Tugas file ini cuma nyambungin UI ke KnowledgeController
 */
@@ -77,6 +75,7 @@ Tugas file ini cuma nyambungin UI ke KnowledgeController
      * Setelah data diproses lewat KnowledgeController tambahPutusan,
      * label status akan diperbarui sesuai hasilnya, dan tabel akan di-refresh.
      */
+
     @FXML
     private void handleTambahPutusan() {
         try {
@@ -96,7 +95,6 @@ Tugas file ini cuma nyambungin UI ke KnowledgeController
             };
 
             boolean sukses = controller.tambahPutusan(data);
-
             if (sukses) {
                 lblStatus.setText("Data berhasil ditambahkan.");
             } else {
