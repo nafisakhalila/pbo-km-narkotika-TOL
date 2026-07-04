@@ -81,7 +81,7 @@ public class KnowledgeRepository {
                 "Pengedar, Perantara jual, dan Pengedar Narkotika", 108, 1000000000.0,
                 "Hakim Ketua: Tongani, S.H., M.H. Hakim Anggota: Silfi Yanti Zulfia, S.H., M.H. dan Darwanto, S.H., M.H."));
 
-        simpan(new Putusan("27/Pid.Sus/2024/PN Sby", "PN Surabaya", "2024-07-03 00:00:00",
+        simpan(new Putusan("27/Pid.Sus/2024/PN Sby", "PN Surabaya", "07/03/2024",
                 "Moch. Fahri", 52, "Shabu (Metamfetamina)",
                 1.834, "Pasal 114 ayat (1) UU RI No. 35 Tahun 2009",
                 "Pengedar, Penjual, dan Pemakai", 102, 1000000000.0,
@@ -111,7 +111,7 @@ public class KnowledgeRepository {
                 "Pengedar dan penjual Narkotika", 60, 800000000.0,
                 "Hakim Ketua: Abu Achmad Sidqi Amsya, S.H. Hakim Anggota: Dr. Nurnaningsih Amriani, S.H., M.H. dan  Widiarso, S.H., M.H."));
 
-        simpan(new Putusan("34/Pid.Sus/2024/PN Sby", "PN Surabaya", "2024-07-03 00:00:00",
+        simpan(new Putusan("34/Pid.Sus/2024/PN Sby", "PN Surabaya", "07/03/2024",
                 "Abdul Gefur", 44, "Shabu (Kristal Metamfetamina)",
                 0.836, "Pasal 112 ayat (1) UU RI No. 35 Tahun 2009",
                 "Pemilik, Pemakai, dan Pengedar Narkotika", 60, 800000000.0,
@@ -141,7 +141,7 @@ public class KnowledgeRepository {
                 "Pengedar dan Perantara jual beli Narkotika", 84, 1000000000.0,
                 "Hakim Ketua: Sudar, S.H., M.Hum. Hakim Anggota: Alex Adam Faisal, S.H. dan Suswanti, S.H., M.Hum."));
 
-        simpan(new Putusan("54/Pid.Sus/2024/PN Sby", "PN Surabaya", "2024-01-02 00:00:00",
+        simpan(new Putusan("54/Pid.Sus/2024/PN Sby", "PN Surabaya", "01/02/2024",
                 "Warda Andreansyah", 24, "Shabu (Kristal Metamfetamina)",
                 0.001, "Pasal 114 ayat (1) UU RI No. 35 Tahun 2009",
                 "Pemilik dan Penguasa Narkotika", 66, 1000000000.0,
@@ -195,7 +195,7 @@ public class KnowledgeRepository {
                 "Pengedar Narkotika", 72, 1000000000.0,
                 "Hakim Ketua: Djuanto, S.H., M.H. Hakim Anggota: Antyo Harri Susetyo, S.H.; Cokia Ana Pontia Opposunggu, S.H., M.H"));
 
-        simpan(new Putusan("80/Pid.Sus/2024/PN Sby", "PN Surabaya", "2024-09-04 00:00:00",
+        simpan(new Putusan("80/Pid.Sus/2024/PN Sby", "PN Surabaya", "09/04/2024",
                 "Moch. Dahlan", 49, "Shabu (Kristal Metamfetamina)",
                 5.018, "Pasal 114 ayat (2) UU RI No. 35 Tahun 2009",
                 "Pengedar dan penjual Narkotika", 84, 1000000000.0,
@@ -237,7 +237,7 @@ public class KnowledgeRepository {
                 "Perantara jual beli Narkotika", 96, 1000000000.0,
                 "Hakim Ketua: I Ketut Kimiarsa, S.H., M.H. Hakim Anggota: Erintuah Damanik, S.H., M.H. dan Suparno, S.H., M.H."));
 
-        simpan(new Putusan("97/Pid.Sus/2024/PN Sby", "PN Surabaya", "2024-04-04 00:00:00",
+        simpan(new Putusan("97/Pid.Sus/2024/PN Sby", "PN Surabaya", "04/04/2024",
                 "Dimas Agus Setiawan", 21, "Bukan tanaman jenis sabu (Metamfetamina)",
                 0.259, "Pasal 114 ayat (1) UU RI No. 35 Tahun 2009",
                 "Pengedar dan penjual Narkotika", 72, 1000000000.0,
@@ -291,7 +291,7 @@ public class KnowledgeRepository {
                 "Pengedar dan penjual Narkotika", 84, 1000000000.0,
                 "Hakim Ketua: Antyo Harri Susetyo, S.H. Hakim Anggota: Titik Budi Winarti, S.H., M.H. dan Cokia Ana Pontia Oppusunggu, S.H., M.H."));
 
-        simpan(new Putusan("124/Pid.Sus/2024/PN Sby", "PN Surabaya", "2024-06-03 00:00:00",
+        simpan(new Putusan("124/Pid.Sus/2024/PN Sby", "PN Surabaya", "06/03/2024",
                 "Ari Budiatmaja", 35, "Bukan tanaman jenis sabu (Metamfetamina)",
                 12.528, "Pasal 114 ayat (2) UU RI No. 35 Tahun 2009",
                 "Pengedar dan Perantara jual beli Narkotika", 132, 1000000000.0,

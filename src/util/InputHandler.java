@@ -12,7 +12,7 @@ public class InputHandler {
         while (true) {
             System.out.print(prompt);
             try {
-                return Integer.parselnt(sc.nextLine().trim());
+                return Integer.parseInt(sc.nextLine().trim());
             } catch (NumberFormatException e) {
                 //user suka iseng masukin huruf, jadi harus di-handle
                 System.out.println("Input harus berupa angka bulat. Coba lagi.");

@@ -21,9 +21,9 @@ public class KnowledgeController {
         try {
             Putusan p = new Putusan(
                     data[0], data[1], data[2], data[3],
-                    Integer.parselnt(data[4]), data[5],
+                    Integer.parseInt(data[4]), data[5],
                     Double.parseDouble(data[6]), data[7], data[8],
-                    Integer.parselnt(data[9]), Double.parseDouble(data[10]), data[11]
+                    Integer.parseInt(data[9]), Double.parseDouble(data[10]), data[11]
             );
             repository.simpan(p);
             return true;
@@ -72,5 +72,6 @@ public class KnowledgeController {
         return repository.getDaftarSemua();
     }
 }
-}
+
+
 
