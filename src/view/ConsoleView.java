@@ -1,17 +1,14 @@
 package view;
-
 import model.Putusan;
 import model.StatistikPutusan;
 import java.util.ArrayList;
 import java.util.Scanner;
 /**
- * Ini bagian tampilan buat versi console (command line).
- * Tugasnya cuma nampilin teks ke layar sama nangkep input dari user
- * di sini fokusnya cuma "tampil" doang.
+ * Ini adalah bagian tampilan buat versi console (command line).
+ * Tugasnya adalah cuma nampilin teks ke layar sama nangkap input dari user
+ * di sini fokusnya cuma "tampil" aja.
  */
-
 public class ConsoleView {
-
     public int tampilkanMenu(Scanner sc) {
         System.out.println("\n=== KMS PUTUSAN PENGADILAN NARKOTIKA ===");
         System.out.println("1. Tambah Putusan");
@@ -28,9 +25,8 @@ public class ConsoleView {
             return -1;
         }
     }
-
     /**
-     * Nampilin daftar semua putusan versi ringkas (kayak tabel sederhana)
+     * Menampilkan daftar semua putusan versi ringkas (seperti tabel sederhana)
      */
     public void tampilkanDaftarPutusan(ArrayList<Putusan> list) {
         if (list.isEmpty()) {
@@ -45,7 +41,6 @@ public class ConsoleView {
             i++;
         }
     }
-
     public void tampilkanDetail(Putusan p) {
         if (p == null) {
             System.out.println("Data tidak ditemukan.");
@@ -53,15 +48,12 @@ public class ConsoleView {
         }
         p.tampilkan(true);
     }
-
     public void tampilkanStatistik(StatistikPutusan stat) {
         stat.tampilkanLaporan();
     }
-
     public void tampilkanPesan(String pesan) {
         System.out.println(pesan);
     }
-
     public String[] inputFormPutusan(Scanner sc) {
         String[] data = new String[12];
         System.out.println("\n--- Form Tambah Putusan ---");

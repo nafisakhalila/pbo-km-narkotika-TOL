@@ -18,13 +18,13 @@ import javafx.scene.layout.VBox;
 /** Controller buat sisi tampilan (JavaFX)
 Tugas file ini cuma nyambungin UI ke KnowledgeController
 */
- public class JavaFXController {
 
+ public class JavaFXController {
     /**controller utama, isinya logic simpan/hapus/tampil data putusan*/
     private KnowledgeController controller = new KnowledgeController();
-
     /** Input field untuk nomor perkara, nama terdakwa, jenis narkotika, vonis, pengadilan,
      * tanggal, umur, berat, pasal, peran, dwnda, hakim*/
+
     @FXML private TextField txtNomorPerkara;
     @FXML private TextField txtNamaTerdakwa;
     @FXML private TextField txtJenisNarkotika;
@@ -54,6 +54,7 @@ Tugas file ini cuma nyambungin UI ke KnowledgeController
     @FXML private TableColumn<Putusan, Double> colDenda;
     @FXML private TableColumn<Putusan, String> colHakim;
     // method ini otomatis kepanggil pas FXML selesai di-load
+
     @FXML
     public void initialize() {
         // mapping kolom tabel ke atribut di model Putusan
@@ -77,6 +78,7 @@ Tugas file ini cuma nyambungin UI ke KnowledgeController
      * Setelah data diproses lewat KnowledgeController tambahPutusan,
      * label status akan diperbarui sesuai hasilnya, dan tabel akan di-refresh.
      */
+
     @FXML
     private void handleTambahPutusan() {
         try {
@@ -96,7 +98,6 @@ Tugas file ini cuma nyambungin UI ke KnowledgeController
             };
 
             boolean sukses = controller.tambahPutusan(data);
-
             if (sukses) {
                 lblStatus.setText("Data berhasil ditambahkan.");
             } else {
@@ -109,11 +110,13 @@ Tugas file ini cuma nyambungin UI ke KnowledgeController
             lblStatus.setText("Ups, ada kesalahan. Coba periksa kembali input Anda.");
         }
     }
+
     /**
      * Handler untuk tombol "Cari".
      * Mencari putusan berdasarkan nomor perkara atau nama terdakwa
      * (dicoba dua-duanya, hasil yang ditemukan langsung ditampilkan di tabel).
      */
+
     @FXML
     private void handleCariPutusan() {
         String keyword = txtCari.getText();
@@ -147,6 +150,7 @@ Tugas file ini cuma nyambungin UI ke KnowledgeController
  *      * dengan nomor perkara tersebut. Label status akan diperbarui sesuai hasilnya,
  *      * dan tabel akan di-refresh.
  *      */
+
     @FXML
     private void handleHapusPutusan() {
         String nomor = txtNomorPerkara.getText();
@@ -172,7 +176,7 @@ Tugas file ini cuma nyambungin UI ke KnowledgeController
 
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Statistik Putusan");
-        alert.setHeaderText(null); // header custom kita buat sendiri di content
+        alert.setHeaderText(null);
 
         // ===== Header =====
         Label headerTitle = new Label("📊 Laporan Statistik Putusan Narkotika");
