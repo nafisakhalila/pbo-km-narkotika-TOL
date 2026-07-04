@@ -1,10 +1,13 @@
 package util;
+
 import java.util.Scanner;
 
 /**helper buat validasi input, biar ga gampang crash kalo user salah ketik
 dipake di hampir semua menu progam ini
  */
+
 public class InputHandler {
+
     //minta input angka bulat, ulang terus kalo salah format
     public static int validasilnt(String prompt, Scanner sc) {
         while (true) {
@@ -16,6 +19,7 @@ public class InputHandler {
             }
         }
     }
+
     public static double validasiDouble(String prompt, Scanner sc) {
         while (true) {
             System.out.print(prompt);
@@ -26,6 +30,7 @@ public class InputHandler {
             }
         }
     }
+
     public static String validasiString(String prompt, Scanner sc) {
         while (true) {
             System.out.print(prompt);
@@ -35,13 +40,16 @@ public class InputHandler {
                 System.out.println("Input tidak boleh kosong. Coba lagi.");
                 continue;
             }
+
             return input;
         }
     }
+
     /**buat validasi pilihan menu (misal 1-5), manggil validasilnt di dalemnya*/
     public static int validasiPilihan(String prompt, int min, int max, Scanner sc) {
 
         int pilihan;
+
         while (true) {
             pilihan = validasilnt(prompt, sc);
             if (pilihan < min || pilihan > max) {
@@ -50,6 +58,7 @@ public class InputHandler {
             }
             break;
         }
+
         return pilihan;
     }
 }
