@@ -6,8 +6,8 @@ import java.util.Scanner;
 
 /**
  * Entry point aplikasi versi console.
- * Alurnya sederhana: tampilin menu -> proses pilihan user -> ulang lagi
- * ConsoleView buat urusan tampil/input, terus manggil KnowledgeController
+ * Alurnya: tampilin menu -> proses pilihan user -> ulang lagi
+ * ConsoleView buat urusan tampil/input, terus memanggil KnowledgeController
  * buat urusan proses datanya.
  */
 public class Main {

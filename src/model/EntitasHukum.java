@@ -2,13 +2,10 @@ package model;
 
 /**
  * Superclass abstrak buat semua entitas hukum di sistem KMS ini.
- * Nyimpen atribut yang sama-sama dimiliki semua jenis entitas hukum:
+ * Nyimpan atribut yang sama-sama dimiliki semua jenis entitas hukum:
  * nomor perkara, nama pengadilan, sama tanggal putusan.
- *
  * Dibuat abstract karena EntitasHukum sendiri ga akan pernah diinstansiasi
  * langsung — selalu lewat subclass-nya (contoh: Putusan).
- *
- * Dibuat untuk Tugas Besar PBO - Sistem Informasi Putusan Narkotika
  */
 public abstract class EntitasHukum {
 
