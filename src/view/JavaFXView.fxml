@@ -18,6 +18,30 @@
         <Label text="Nomor Perkara:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
         <TextField fx:id="txtNomorPerkara" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
 
+        <Label text="Pengadilan:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtPengadilan" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+        <Label text="Tanggal Putusan:" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtTanggal" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+
+        <Label text="Umur Terdakwa:" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtUmur" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+
+        <Label text="Berat Barang Bukti:" GridPane.rowIndex="7" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtBerat" GridPane.rowIndex="7" GridPane.columnIndex="1"/>
+
+        <Label text="Pasal Dilanggar:" GridPane.rowIndex="8" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtPasal" GridPane.rowIndex="8" GridPane.columnIndex="1"/>
+
+        <Label text="Peran Terdakwa:" GridPane.rowIndex="9" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtPeran" GridPane.rowIndex="9" GridPane.columnIndex="1"/>
+
+        <Label text="Vonis Denda:" GridPane.rowIndex="10" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtDenda" GridPane.rowIndex="10" GridPane.columnIndex="1"/>
+
+        <Label text="Nama Hakim:" GridPane.rowIndex="11" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtHakim" GridPane.rowIndex="11" GridPane.columnIndex="1"/>
+
         <Label text="Nama Terdakwa:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
         <TextField fx:id="txtNamaTerdakwa" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
 
