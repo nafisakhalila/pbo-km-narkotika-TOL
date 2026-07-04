@@ -55,3 +55,6 @@ develop - branch integrasi
 feature/model, feature/view, feature/controller - branch pengembangan per layer 
 Seluruh perubahan dikelola melalui Pull Request dengan review sebelum di merge ke develop.
 
+#Link Video
+https://youtu.be/c_k4ZxZBgHY?si=4lWoEb0Yy5joFRcO
+
