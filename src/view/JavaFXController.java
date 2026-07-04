@@ -9,14 +9,16 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-// Controller buat sisi tampilan (JavaFX)
-// Tugas file ini cuma nyambungin UI ke KnowledgeController, gak ada logic bisnis di sini
-// biar sesuai prinsip pemisahan tanggung jawab (MVC) yang diajarin di kelas
-public class JavaFXController {
+/** Controller buat sisi tampilan (JavaFX)
+Tugas file ini cuma nyambungin UI ke KnowledgeController
+*/
+ public class JavaFXController {
 
-    // controller utama, isinya logic simpan/hapus/tampil data putusan
+    /**controller utama, isinya logic simpan/hapus/tampil data putusan*/
     private KnowledgeController controller = new KnowledgeController();
 
+    /** Input field untuk nomor perkara, nama terdakwa, jenis narkotika, vonis, pengadilan,
+     * tanggal, umur, berat, pasal, peran, dwnda, hakim*/
     @FXML private TextField txtNomorPerkara;
     @FXML private TextField txtNamaTerdakwa;
     @FXML private TextField txtJenisNarkotika;
@@ -64,7 +66,11 @@ public class JavaFXController {
         refreshTabel();
     }
 
-    // handler tombol "Tambah"
+    /**
+     * Handler untuk tombol "Tambah Putusan".
+     * Setelah data diproses lewat KnowledgeController tambahPutusan,
+     * label status akan diperbarui sesuai hasilnya, dan tabel akan di-refresh.
+     */
     @FXML
     private void handleTambahPutusan() {
         try {
@@ -105,8 +111,13 @@ public class JavaFXController {
             lblStatus.setText("Ups, ada kesalahan. Coba periksa kembali input Anda.");
         }
     }
-
-    // handler tombol "Hapus"
+/**
+ * Handler untuk tombol "Hapus Putusan".
+ * Mengambil nomor perkara dari input field,lalu meminta
+ *      * KnowledgeController hapusPutusan untuk menghapus data
+ *      * dengan nomor perkara tersebut. Label status akan diperbarui sesuai hasilnya,
+ *      * dan tabel akan di-refresh.
+ *      */
     @FXML
     private void handleHapusPutusan() {
         String nomor = txtNomorPerkara.getText();

@@ -2,8 +2,9 @@ package util;
 
 import java.util.Scanner;
 
-//helper buat validasi input, biar ga gampang crash kalo user salah ketik
-//dipake di hampir semua menu progam ini
+/**helper buat validasi input, biar ga gampang crash kalo user salah ketik
+dipake di hampir semua menu progam ini
+ */
 
 public class InputHandler {
 

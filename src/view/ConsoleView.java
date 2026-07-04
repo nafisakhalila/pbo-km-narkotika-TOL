@@ -4,6 +4,11 @@ import model.Putusan;
 import model.StatistikPutusan;
 import java.util.ArrayList;
 import java.util.Scanner;
+/**
+ * Ini bagian tampilan buat versi console (command line).
+ * Tugasnya cuma nampilin teks ke layar sama nangkep input dari user
+ * di sini fokusnya cuma "tampil" doang.
+ */
 
 public class ConsoleView {
 
@@ -24,6 +29,9 @@ public class ConsoleView {
         }
     }
 
+    /**
+     * Nampilin daftar semua putusan versi ringkas (kayak tabel sederhana)
+     */
     public void tampilkanDaftarPutusan(ArrayList<Putusan> list) {
         if (list.isEmpty()) {
             System.out.println("Tidak ada data untuk ditampilkan.");

@@ -5,8 +5,8 @@ import model.Putusan;
 import model.StatistikPutusan;
 import java.util.ArrayList;
 
-//jembatan antara View sama Model
-//semua request dari UI lewat sini dulu sebelum sampe ke repository
+/** jembatan antara View sama Model
+semua request dari UI lewat sini dulu sebelum sampe ke repository*/
 public class KnowledgeController {
 
     private KnowledgeRepository repository;
@@ -15,8 +15,13 @@ public class KnowledgeController {
         repository = new KnowledgeRepository();
     }
 
-    //data mentah dari form/CSV -> object Putusan
-    //urutan array-nya harus pas, kalo ga bakal kena catch di bawah
+    /**
+     * Nambahin putusan baru dari data mentah
+     * Urutan array-nya harus pas sama urutan constructor Putusan, kalo
+     * kena catch di sini bisa jadi 2 sebab: format angkanya salah
+     * (misal umur/vonis diisi huruf), atau array-nya kurang/lebih elemen
+     * @return true kalo berhasil disimpan, false kalo ada yang error
+     */
     public boolean tambahPutusan(String[] data) {
         try {
             Putusan p = new Putusan(
@@ -28,13 +33,11 @@ public class KnowledgeController {
             repository.simpan(p);
             return true;
         } catch (Exception e) {
-            //bisa NumberFormatException atau ArrayIndexOutOfBounds, males dibedain
             return false;
         }
     }
 
-    // cari putusan, mode-nya cuma dua: "nomor" atau "nama"
-    // TODO: mungkin nanti tambah mode pencarian lain kalo dibutuhin
+    /**cari putusan, mode-nya cuma dua: "nomor" atau "nama"*/
     public ArrayList<Putusan> cariPutusan(String keyword, String mode) {
         if (mode.equalsIgnoreCase("nomor")) {
             ArrayList<Putusan> hasil = new ArrayList<>();
@@ -48,7 +51,7 @@ public class KnowledgeController {
         return repository.cariByNama(keyword);
     }
 
-    // filter data, kriteria "jenis" (narkotika) atau "pengadilan"
+    /** filter data, kriteria "jenis" (narkotika) atau "pengadilan"*/
     public ArrayList<Putusan> filterPutusan(String kriteria, String nilai) {
         if (kriteria.equalsIgnoreCase("jenis")) {
             return repository.filterByJenis(nilai);
@@ -57,17 +60,17 @@ public class KnowledgeController {
         return repository.filterByPengadilan(nilai);
     }
 
-    // hapus berdasarkan nomor perkara, return false kalo ga ketemu
+    /** hapus */
     public boolean hapusPutusan(String nomor) {
         return repository.hapus(nomor);
     }
 
-    // ngitung statistik dari semua data yang ada
+    /** ngitung statistik dari semua data yang ada*/
     public StatistikPutusan getStatistik() {
         return new StatistikPutusan(repository.getDaftarSemua());
     }
 
-    // buat nampilin semua data di tabel/list view
+    /** buat nampilin semua data di tabel/list view */
     public ArrayList<Putusan> getSemuaPutusan() {
         return repository.getDaftarSemua();
     }

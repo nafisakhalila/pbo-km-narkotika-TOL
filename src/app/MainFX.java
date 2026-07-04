@@ -6,8 +6,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-// entry point versi GUI (JavaFX) - ini fitur bonus di luar requirement utama
-// layout-nya diatur di FXML, jadi di sini cuma load + tampilin
+/** entry point versi GUI (JavaFX) - ini fitur bonus di luar requirement utama
+ layout-nya diatur di FXML, jadi di sini cuma load + tampilin
+ */
 public class MainFX extends Application {
 
     @Override
