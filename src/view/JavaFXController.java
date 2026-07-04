@@ -74,26 +74,19 @@ Tugas file ini cuma nyambungin UI ke KnowledgeController
     @FXML
     private void handleTambahPutusan() {
         try {
-            // catatan: sebagian data masih di-hardcode dulu karena form belum lengkap
-            // (rencananya field2 ini bakal ditambah kalau ada waktu revisi)
-            String nomor = txtNomorPerkara.getText();
-            String nama = txtNamaTerdakwa.getText();
-            String jenis = txtJenisNarkotika.getText();
-            String vonis = txtVonis.getText();
-
             String[] data = {
-                    nomor,
-                    "PN Surabaya",
-                    "01/01/2026",
-                    nama,
-                    "30",
-                    jenis,
-                    "1.0",
-                    "Pasal 114 UU No. 35/2009",
-                    "Kurir",
-                    vonis,
-                    "0",
-                    "Hakim Contoh"
+                    txtNomorPerkara.getText(),
+                    txtPengadilan.getText(),
+                    txtTanggal.getText(),
+                    txtNamaTerdakwa.getText(),
+                    txtUmur.getText(),
+                    txtJenisNarkotika.getText(),
+                    txtBerat.getText(),
+                    txtPasal.getText(),
+                    txtPeran.getText(),
+                    txtVonis.getText(),
+                    txtDenda.getText(),
+                    txtHakim.getText()
             };
 
             boolean sukses = controller.tambahPutusan(data);
@@ -107,7 +100,6 @@ Tugas file ini cuma nyambungin UI ke KnowledgeController
             refreshTabel();
 
         } catch (Exception e) {
-            // ditangkap generic dulu, belum sempat bikin exception khusus
             lblStatus.setText("Ups, ada kesalahan. Coba periksa kembali input Anda.");
         }
     }

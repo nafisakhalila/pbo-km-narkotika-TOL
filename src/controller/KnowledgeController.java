@@ -33,6 +33,8 @@ public class KnowledgeController {
             repository.simpan(p);
             return true;
         } catch (Exception e) {
+            System.out.println("DEBUG ERROR: " + e.getMessage());
+            e.printStackTrace();
             return false;
         }
     }
