@@ -15,13 +15,11 @@ public class InputHandler {
             try {
                 return Integer.parseInt(sc.nextLine().trim());
             } catch (NumberFormatException e) {
-                //user suka iseng masukin huruf, jadi harus di-handle
                 System.out.println("Input harus berupa angka bulat. Coba lagi.");
             }
         }
     }
 
-    //sama kayak di atas tapi buat angka desimal (harga, nilai, dll)
     public static double validasiDouble(String prompt, Scanner sc) {
         while (true) {
             System.out.print(prompt);
@@ -33,7 +31,6 @@ public class InputHandler {
         }
     }
 
-    //validasi teks biasa, cuma mastiin ga kosong
     public static String validasiString(String prompt, Scanner sc) {
         while (true) {
             System.out.print(prompt);
@@ -47,7 +44,7 @@ public class InputHandler {
         }
     }
 
-    //buat validasi pilihan menu (misal 1-5), manggil validasilnt di dalemnya
+    /**buat validasi pilihan menu (misal 1-5), manggil validasilnt di dalemnya*/
     public static int validasiPilihan(String prompt, int min, int max, Scanner sc) {
 
         int pilihan;
