@@ -215,7 +215,7 @@ Tugas file ini cuma nyambungin UI ke KnowledgeController
         content.setStyle("-fx-background-color: white;");
 
         alert.getDialogPane().setContent(content);
-        alert.getDialogPane().setPrefWidth(480);
+        alert.getDialogPane().setPrefWidth(650);
 
         alert.getDialogPane().getStylesheets().add(
                 getClass().getResource("style.css").toExternalForm()
@@ -233,6 +233,8 @@ Tugas file ini cuma nyambungin UI ke KnowledgeController
     private Label buatLabelValue(String text) {
         Label l = new Label(text);
         l.setStyle("-fx-text-fill: #1e293b; -fx-font-weight: 600; -fx-font-size: 13px;");
+        l.setWrapText(true);
+        l.setMaxWidth(400);
         return l;
     }
 
