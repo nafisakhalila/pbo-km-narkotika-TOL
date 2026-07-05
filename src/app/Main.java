@@ -1,20 +1,17 @@
 package app;
-
 import controller.KnowledgeController;
 import view.ConsoleView;
 import java.util.Scanner;
-
 /**
- * Entry point disini aplikasi versi console.
- * Alurnya ini sederhana: tampilkan menu -> proses pilihan user -> ulangi lagi.
- * ConsoleView ini menangani urusan tampilan/input, lalu memanggil
- * KnowledgeController ini untuk urusan proses datanya.
+ * Entry point aplikasi versi console.
+ * Alurnya sederhana: tampilkan menu -> proses pilihan user -> ulangi lagi.
+ * ConsoleView menangani urusan tampilan/input, lalu memanggil
+ * KnowledgeController untuk urusan proses datanya.
  */
 public class Main {
-
     /**
-     * Titik masuk program. Melakukan loop menampilkan menu dan
-     * menjalankan aksi sesuai pilihan user sampai user memilih keluar.
+     * Titik ini masuk program. Melakukan loop menampilkan menu dan
+     * menjalankan aksi ini sesuai pilihan user sampai user memilih keluar.
      */
     public static void main(String[] args) {
         KnowledgeController controller = new KnowledgeController();
