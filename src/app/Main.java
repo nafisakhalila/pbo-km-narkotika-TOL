@@ -5,10 +5,10 @@ import view.ConsoleView;
 import java.util.Scanner;
 
 /**
- * Entry point aplikasi versi console.
- * Alurnya sederhana: tampilkan menu -> proses pilihan user -> ulangi lagi.
- * ConsoleView menangani urusan tampilan/input, lalu memanggil
- * KnowledgeController untuk urusan proses datanya.
+ * Entry point disini aplikasi versi console.
+ * Alurnya ini sederhana: tampilkan menu -> proses pilihan user -> ulangi lagi.
+ * ConsoleView ini menangani urusan tampilan/input, lalu memanggil
+ * KnowledgeController ini untuk urusan proses datanya.
  */
 public class Main {
 

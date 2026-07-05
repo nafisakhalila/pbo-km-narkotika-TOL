@@ -10,6 +10,7 @@ import java.util.ArrayList;
  * Semua request dari UI lewat sini dulu sebelum sampai ke repository,
  * jadi controller-lah yang jadi satu-satunya pintu masuk ke data.
  */
+
 public class KnowledgeController {
 
     private final KnowledgeRepository repository;
@@ -32,6 +33,7 @@ public class KnowledgeController {
      * @param data array data mentah sesuai urutan field Putusan
      * @return true jika berhasil disimpan, false jika terjadi kesalahan
      */
+
     public boolean tambahPutusan(String[] data) {
         try {
             Putusan p = new Putusan(
@@ -55,6 +57,7 @@ public class KnowledgeController {
      * @param mode    "nomor" untuk cari berdasarkan nomor perkara,
      *                selain itu dianggap cari berdasarkan nama terdakwa
      */
+
     public ArrayList<Putusan> cariPutusan(String keyword, String mode) {
         if (mode.equalsIgnoreCase("nomor")) {
             ArrayList<Putusan> hasil = new ArrayList<>();
@@ -74,6 +77,7 @@ public class KnowledgeController {
      * @param kriteria "jenis" untuk filter berdasarkan jenis narkotika,
      *                 selain itu dianggap filter berdasarkan pengadilan
      */
+
     public ArrayList<Putusan> filterPutusan(String kriteria, String nilai) {
         if (kriteria.equalsIgnoreCase("jenis")) {
             return repository.filterByJenis(nilai);
@@ -81,6 +85,7 @@ public class KnowledgeController {
 
         return repository.filterByPengadilan(nilai);
     }
+
     /** Menghapus putusan berdasarkan nomor perkara. */
     public boolean hapusPutusan(String nomor) {
         return repository.hapus(nomor);
