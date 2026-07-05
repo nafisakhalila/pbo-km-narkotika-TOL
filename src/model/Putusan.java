@@ -4,8 +4,6 @@ package model;
  * pidana narkotika. Extends dari EntitasHukum (buat field umum kayak nomor
  * perkara, pengadilan, tanggal) dan implements Rekapitulasi (buat fitur ringkasan).
  * Semua field private, akses lewat getter/setter — biar sesuai prinsip enkapsulasi.
- *
- * Dibuat untuk Tugas Besar PBO - Sistem Informasi Putusan Narkotika
  */
 public class Putusan extends EntitasHukum implements Rekapitulasi {
     private String namaTerdakwa;
